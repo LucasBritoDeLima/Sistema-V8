@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3f9fad19-49e1-4d8a-950e-2e5f9004add7">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="campoPequeno" hAlign="Left" vAlign="Top" markup="styled" pattern="" fontName="Courier New" fontSize="5" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Courier New" isPdfEmbedded="true"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\PC02\\Documents\\NetBeansProjects\\Projeto Retifica\\src\\br\\com\\projeto\\view\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="id" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[5]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT os.*, c.*, 
+r.idRetifica as retifica_id, r.nome_fantasia as retifica_nome_fantasia, r.razao_social as retifica_razao_social, r.cnpj as retifica_cnpj,
+r.ie as retifica_ie, r.tel as retifca_tel, r.tel2 as retifca_tel2, r.tel3 as retifca_tel3, r.tel4 as retifca_tel4,
+r.logradouro as retifica_logradouro, r.numero as retifica_numero, r.bairro as retifica_bairro, r.cep as retifica_cep, r.estado as retifica_estado,
+r.cidade as retifica_cidade, r.foto as retifica_foto, 
+m.* FROM tb_ordemdeservico os 
+INNER JOIN tb_cliente c ON (os.cliente = c.idCliente) 
+INNER JOIN tb_retifica r ON (r.idRetifica = os.retifica)
+INNER JOIN tb_motor m ON (os.tb_motor_idMotor = m.idMotor)
+WHERE os.id=$P{id}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="observacoes" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_pecas" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_maodeobra" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_geral" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="materiais" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tb_motor_idMotor" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="retifica" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idCliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpf" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rg" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tel2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="logradouro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numero" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bairro" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cep" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="situacao" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="retifica_id" class="java.lang.Integer"/>
+	<field name="retifica_nome_fantasia" class="java.lang.String"/>
+	<field name="retifica_razao_social" class="java.lang.String"/>
+	<field name="retifica_cnpj" class="java.lang.String"/>
+	<field name="retifica_ie" class="java.lang.String"/>
+	<field name="retifca_tel" class="java.lang.String"/>
+	<field name="retifca_tel2" class="java.lang.String"/>
+	<field name="retifca_tel3" class="java.lang.String"/>
+	<field name="retifca_tel4" class="java.lang.String"/>
+	<field name="retifica_logradouro" class="java.lang.String"/>
+	<field name="retifica_numero" class="java.lang.String"/>
+	<field name="retifica_bairro" class="java.lang.String"/>
+	<field name="retifica_cep" class="java.lang.String"/>
+	<field name="retifica_estado" class="java.lang.String"/>
+	<field name="retifica_cidade" class="java.lang.String"/>
+	<field name="retifica_foto" class="java.awt.Image"/>
+	<field name="idMotor" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="motor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cilindros" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="comb" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="garantia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tb_cliente_idCliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="74" splitType="Stretch">
+			<rectangle radius="3">
+				<reportElement x="0" y="0" width="217" height="64" uuid="6e7933d8-5c39-4067-8b10-f26e124de1fe"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="217" height="22" uuid="c810bdea-22bf-4e73-87c3-e9db1652bc70"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{retifica_nome_fantasia}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<rectangle radius="3">
+				<reportElement x="217" y="0" width="70" height="64" uuid="fdbe5f23-8041-4c35-8645-52b7ae0f5095"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="20" width="217" height="42" uuid="ed3acfef-779c-4711-857b-5d48f97d3069"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{retifica_logradouro} + ","+$F{retifica_numero} + "\n" +$F{retifica_bairro}+"\n"+$F{retifica_cidade}+"/"+$F{retifica_estado}
++ "\n"+$F{retifca_tel}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="3">
+				<reportElement x="287" y="0" width="99" height="64" uuid="ba1a82bb-2730-419d-b842-85c2c64ecf89"/>
+			</rectangle>
+			<rectangle radius="3">
+				<reportElement x="386" y="0" width="169" height="64" uuid="eccf9e25-6530-4b02-847b-14f96be75f83"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="286" y="0" width="100" height="20" uuid="2e30af5e-e1e6-454c-8212-c8b190eae84c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="12"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="287" y="20" width="98" height="20" uuid="2700a337-ec91-4f4d-af95-85dd646c5eb2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="40" width="100" height="20" uuid="23a153c3-688c-429a-9e6b-d969327cea6d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nº"+new DecimalFormat("00").format($F{id})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="387" y="2" width="168" height="20" uuid="a9f5b835-c2d6-4d02-b835-08b57440f09b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Autorização]]></text>
+			</staticText>
+			<line>
+				<reportElement x="395" y="49" width="153" height="1" uuid="516ce3eb-32c6-4516-96d6-20d5b12008d8"/>
+			</line>
+			<image>
+				<reportElement x="221" y="2" width="63" height="62" uuid="9a2ccb10-4094-4e42-91e5-df6bdf9f59a7"/>
+				<imageExpression><![CDATA[$F{retifica_foto}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="64" width="552" height="10" uuid="cb2f998e-5770-48bd-b26a-4bef83346b98"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Courier New" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDEM DE SERVIÇO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="193" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="0" width="552" height="10" uuid="1cc79bff-fe06-43f6-86a1-55a5f50ec72f"/>
+				<textElement>
+					<font fontName="Courier New" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<rectangle radius="3">
+				<reportElement x="0" y="10" width="385" height="24" uuid="4756d96e-4b02-4af0-9c48-147aa6feff8d"/>
+			</rectangle>
+			<rectangle radius="3">
+				<reportElement x="385" y="10" width="170" height="24" uuid="6563f2f3-669c-4668-9146-ba674e5efe5d"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="3" y="11" width="383" height="6" uuid="bd9621a0-ff34-4df2-b8bc-f5f88f75996c"/>
+				<textElement>
+					<font fontName="Courier New" size="5"/>
+				</textElement>
+				<text><![CDATA[NOME / RAZÃO SOCIAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="3" y="16" width="382" height="17" uuid="ef2e1097-eafd-4bc6-a774-401bc1764370"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="387" y="11" width="168" height="6" uuid="552d0fdc-2b71-4ae5-aa36-a4e8d7160762"/>
+				<textElement>
+					<font fontName="Courier New" size="5"/>
+				</textElement>
+				<text><![CDATA[CPF/CNPJ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="387" y="16" width="168" height="17" uuid="ca42ba25-43dd-48a8-b80d-913f7c7246f6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="3">
+				<reportElement x="0" y="34" width="267" height="24" uuid="dc2dd328-da68-4e98-a8c5-cb51922c8e6c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="3" y="35" width="264" height="6" uuid="f826285a-e405-4769-8174-2b6ab3056f13"/>
+				<textElement>
+					<font fontName="Courier New" size="5"/>
+				</textElement>
+				<text><![CDATA[ENDEREÇO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="3" y="40" width="264" height="17" uuid="9b7dbaed-3009-44d5-940d-6de69dd299cf"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{logradouro}+","+$F{numero}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="3">
+				<reportElement x="267" y="34" width="148" height="24" uuid="3c5c76e5-2f9e-4807-b638-1c702d334628"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="270" y="35" width="145" height="6" uuid="33647d18-72aa-4cf7-9e71-74e4230aea47"/>
+				<textElement>
+					<font fontName="Courier New" size="5"/>
+				</textElement>
+				<text><![CDATA[BAIRRO/DISTRITO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="270" y="40" width="145" height="17" uuid="8e7c6fa7-7801-4850-9cb4-66e083ec23dc"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bairro}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="3">
+				<reportElement x="415" y="34" width="140" height="24" uuid="d4a5019e-8e31-4952-b2ed-803812a6156d"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="419" y="35" width="136" height="6" uuid="de36c4b2-ac61-4a9d-9e7f-bf59e93e5526"/>
+				<textElement>
+					<font fontName="Courier New" size="5"/>
+				</textElement>
+				<text><![CDATA[CEP]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="419" y="40" width="136" height="17" uuid="c43584ed-3bf7-47a7-9932-a844e114389e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cep}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="3">
+				<reportElement x="0" y="58" width="180" height="24" uuid="5abd98d2-ebc9-41eb-8035-de2be67acdda"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="3" y="59" width="177" height="6" uuid="a9fc29ce-5f7e-4c16-b3ca-e8f8dfeffc99"/>
+				<textElement>
+					<font fontName="Courier New" size="5"/>
+				</textElement>
+				<text><![CDATA[MUNICÍPIO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="3" y="64" width="177" height="17" uuid="2ecbe8af-1cd0-4ae5-8b7b-9317fb1e1ff4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cidade}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="3">
+				<reportElement x="180" y="58" width="126" height="24" uuid="4c78f335-3075-49f1-9787-025f9f628155"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="182" y="59" width="124" height="6" uuid="8e608a83-f203-4ee9-8027-726223ddd059"/>
+				<textElement>
+					<font fontName="Courier New" size="5"/>
+				</textElement>
+				<text><![CDATA[Telefone / Celular]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="182" y="64" width="124" height="17" uuid="9ac8ddaa-3c9a-48a8-9909-da81a274a7ce"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tel}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="3">
+				<reportElement x="306" y="58" width="44" height="24" uuid="0193fe20-c210-42e3-a453-a1491d1fb586"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="309" y="59" width="41" height="6" uuid="716b38b3-cace-438e-ad1d-3bab6b234716"/>
+				<textElement>
+					<font fontName="Courier New" size="5"/>
+				</textElement>
+				<text><![CDATA[UF]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="309" y="64" width="41" height="17" uuid="3c5a0bce-7743-4948-83eb-6ecd2ec9fef0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="3">
+				<reportElement x="350" y="58" width="126" height="24" uuid="99464bb5-1f4a-4d92-9ed9-765bd51fea9d"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="353" y="59" width="122" height="6" uuid="6709716b-68c4-497d-90eb-7881bf8038e3"/>
+				<textElement>
+					<font fontName="Courier New" size="5"/>
+				</textElement>
+				<text><![CDATA[Telefone / Celular]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="353" y="64" width="122" height="17" uuid="0fa0ff8f-cd55-460d-b56e-2cf30dc40c16"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tel2}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="3">
+				<reportElement x="476" y="58" width="79" height="24" uuid="6e0cfc9d-c2f7-4eb3-953d-0972d1348e35"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="478" y="59" width="77" height="6" uuid="b8284aaf-6d9f-4c50-b68d-563ebabd3b01"/>
+				<textElement>
+					<font fontName="Courier New" size="5"/>
+				</textElement>
+				<text><![CDATA[RG]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="478" y="64" width="77" height="17" uuid="4957ae0b-57d4-4ca8-8902-63e99acd3c73"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rg}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="83" width="552" height="10" uuid="4be7ed1b-f6fc-4622-89c0-7055aef177c5"/>
+				<textElement>
+					<font fontName="Courier New" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Motor]]></text>
+			</staticText>
+			<rectangle radius="3">
+				<reportElement x="0" y="93" width="130" height="24" uuid="cbf6d4ae-4343-48d1-ba24-ebb2c11257d9"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="3" y="94" width="127" height="6" uuid="d63109f6-346d-4e9f-93c1-0fb64a418e4d"/>
+				<textElement>
+					<font fontName="Courier New" size="5"/>
+				</textElement>
+				<text><![CDATA[MOTOR]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="3" y="99" width="127" height="17" uuid="dff8b253-a0f3-4af7-b4bc-343f03bf0730"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{motor}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<rectangle radius="3">
+				<reportElement x="130" y="93" width="157" height="24" uuid="1857114e-6e07-45c3-b0da-ef72f24f6a5c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="133" y="94" width="153" height="6" uuid="e794d704-9013-417e-8af9-e3b15dbd8e5a"/>
+				<textElement>
+					<font fontName="Courier New" size="5"/>
+				</textElement>
+				<text><![CDATA[TIPO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="133" y="99" width="153" height="17" uuid="623bc27e-7086-4977-bf03-8e94deca9583"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipo}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<rectangle radius="3">
+				<reportElement x="287" y="93" width="157" height="24" uuid="f0b39d38-f505-4629-9ed6-8b6bbafdf1f5"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="291" y="94" width="153" height="6" uuid="6cff20b7-45ee-426c-962d-7e5e05b5a181"/>
+				<textElement>
+					<font fontName="Courier New" size="5"/>
+				</textElement>
+				<text><![CDATA[COMBUSTÍVEL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="291" y="99" width="153" height="17" uuid="e1bbb0dd-5bfd-43d3-82e7-05d95a13dbb4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comb}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<rectangle radius="3">
+				<reportElement x="444" y="93" width="111" height="24" uuid="9ca5d61e-51b0-4d9b-9292-1f665061b6db"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="447" y="94" width="108" height="6" uuid="75b9906a-322e-4229-b8ea-7953c49a4041"/>
+				<textElement>
+					<font fontName="Courier New" size="5"/>
+				</textElement>
+				<text><![CDATA[CILINDROS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="447" y="99" width="108" height="17" uuid="fa8b5be0-c17c-4cd4-8924-f53a8fd6de29"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cilindros} + " Cilindro(s)"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="118" width="552" height="10" uuid="2e6af929-5a2f-4fbc-9cd7-9217732c7c44"/>
+				<textElement>
+					<font fontName="Courier New" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Totais]]></text>
+			</staticText>
+			<rectangle radius="3">
+				<reportElement x="-1" y="128" width="139" height="24" uuid="a4cc1e90-a2f3-4421-85f6-3f2fec02b6d0"/>
+			</rectangle>
+			<rectangle radius="3">
+				<reportElement x="138" y="128" width="139" height="24" uuid="8edab203-65a0-41ce-9b93-8d04439abb8c"/>
+			</rectangle>
+			<rectangle radius="3">
+				<reportElement x="277" y="128" width="139" height="24" uuid="0ee17664-b4bc-4421-b846-57b3b67ae08c"/>
+			</rectangle>
+			<rectangle radius="3">
+				<reportElement x="416" y="128" width="139" height="24" uuid="85de0fc0-4594-43a9-9dbf-86bb62745b51"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="3" y="129" width="134" height="6" uuid="75bc4c4e-5604-411a-8694-16648be747e0"/>
+				<textElement>
+					<font fontName="Courier New" size="5"/>
+				</textElement>
+				<text><![CDATA[Total de Mão de Obra]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="3" y="134" width="134" height="17" uuid="3262d303-aebe-4f55-a842-b12d9b9cef5c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["R$ "+$F{total_maodeobra}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="141" y="129" width="134" height="6" uuid="e773944c-c513-4c10-897e-f954bddb69e3"/>
+				<textElement>
+					<font fontName="Courier New" size="5"/>
+				</textElement>
+				<text><![CDATA[Total de Peças]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="141" y="134" width="134" height="17" uuid="c8359c5a-048e-48d5-bf69-1163f86e555a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["R$ "+$F{total_pecas}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="129" width="134" height="6" uuid="802a441c-ca80-4c00-bd82-c37a2747c6d2"/>
+				<textElement>
+					<font fontName="Courier New" size="5"/>
+				</textElement>
+				<text><![CDATA[Materiais]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="134" width="134" height="17" uuid="a0381559-afe6-4616-acf8-bb0b79c25014"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["R$ "+$F{materiais}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="419" y="129" width="134" height="6" uuid="c093ceb5-79ed-422a-b334-858d20324af6"/>
+				<textElement>
+					<font fontName="Courier New" size="5"/>
+				</textElement>
+				<text><![CDATA[Total Geral]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="419" y="134" width="134" height="17" uuid="3f1f00d9-9df2-4586-887d-3ad0b874cf45"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["R$ "+$F{total_geral}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="153" width="552" height="10" uuid="3180e452-9f89-4fc9-b7b0-86a370ab4f28"/>
+				<textElement>
+					<font fontName="Courier New" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DADOS DO PRODUTO/SERVIÇO]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="-1" y="163" width="556" height="30" uuid="1261dd74-4cf1-42b6-ba72-e4361bb68fdb"/>
+				<subreportParameter name="SUBREPORT_DIR"/>
+				<subreportParameter name="id">
+					<subreportParameterExpression><![CDATA[$P{id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="parameter1"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["C:\\Users\\LUCAS\\Documents\\NetBeansProjects\\Projeto Retifica\\src\\br\\com\\projeto\\view\\ordemServico_subreport2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="8" splitType="Stretch"/>
+	</detail>
+	<pageFooter>
+		<band height="129">
+			<rectangle radius="3">
+				<reportElement x="0" y="0" width="555" height="129" uuid="435496f9-fbe0-4cb4-a479-f267717c90bf"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="3" y="3" width="550" height="10" uuid="c0b01fd0-fec4-4dd0-8db7-cfddabafe88c"/>
+				<textElement>
+					<font fontName="Courier New" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OBSERVAÇÕES]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="3" y="13" width="550" height="113" uuid="1cc89636-deed-44b8-99f0-c58450c00011"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{observacoes}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
